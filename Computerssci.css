@@ -1,0 +1,178 @@
+:root {
+    --bg: #0a0a0c;
+    --surface: #121215;
+    --accent: #00ff9d;
+    --text-main: #e2e2e7;
+    --text-dim: #888891;
+    --border: #27272a;
+    --font-mono: 'Courier New', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+}
+
+.bg-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    mask-image: radial-gradient(circle, black, transparent 80%);
+    opacity: 0.5;
+}
+
+nav {
+    padding: 2rem;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-family: var(--font-mono);
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.brand span { 
+    color: var(--accent); 
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    margin-left: 20px;
+    font-size: 0.9rem;
+}
+
+.links a:hover { 
+    color: var(--accent); 
+}
+
+.hero {
+    padding: 100px 10% 60px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tag {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    background: rgba(0, 255, 157, 0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin: 20px 0;
+    line-height: 0.9;
+    letter-spacing: -2px;
+}
+
+h1 span {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-main);
+}
+
+p {
+    max-width: 500px;
+    color: var(--text-dim);
+    margin-bottom: 30px;
+}
+
+.hero-btns { 
+    display: flex; 
+    gap: 15px; 
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: black;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: var(--font-mono);
+    border-radius: 2px;
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 12px 24px;
+    text-decoration: none;
+    font-family: var(--font-mono);
+}
+
+.grid-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0;
+    padding: 0 20px;
+}
+
+.card {
+    border: 1px solid var(--border);
+    padding: 40px;
+    background: var(--surface);
+    transition: 0.4s ease;
+    position: relative;
+}
+
+.card:hover {
+    background: #1a1a1e;
+    z-index: 1;
+    border-color: var(--accent);
+}
+
+.card-num {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.card h3 {
+    font-family: var(--font-mono);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.pulse-border {
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.05);
+}
+
+footer {
+    text-align: center;
+    padding: 60px;
+    font-family: var(--font-mono);
+    color: #444;
+    font-size: 0.8rem;
+}
